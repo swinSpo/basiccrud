@@ -1,4 +1,5 @@
-const data = require('@begin/data')
+let arc = require('@architect/functions')
+let data = require('@begin/data')
 
 exports.handler = async function todos (req) {
   let key = arc.http.helpers.bodyParser(req).key // Base64 decodes + parses body
