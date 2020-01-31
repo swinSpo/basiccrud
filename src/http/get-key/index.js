@@ -1,11 +1,10 @@
-let arc = require('@architect/functions')
 let data = require('@begin/data')
 
 exports.handler = async function todos (req) {
-  let key = arc.http.helpers.bodyParser(req).key // Base64 decodes + parses body
+  let body = req.queryStringParameters
   let keyValue = await data.get({
     table: 'keys',
-    key,
+    key: body.key
   })
   return {
     statusCode: 200,

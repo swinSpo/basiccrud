@@ -1,8 +1,7 @@
-let arc = require('@architect/functions')
 let data = require('@begin/data')
 
 exports.handler = async function todos (req) {
-  let body = arc.http.helpers.bodyParser(req)
+  let body = req.queryStringParameters
   let keyValue = await data.destroy({
     table: 'keys',
     key: body.key,
