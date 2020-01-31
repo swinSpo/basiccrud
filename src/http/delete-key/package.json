@@ -1,0 +1,7 @@
+{
+  "name": "begin-app-delete-key",
+  "dependencies": {
+    "@architect/functions": "latest",
+    "@begin/data": "latest"
+  }
+}
