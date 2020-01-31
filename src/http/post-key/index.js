@@ -2,7 +2,7 @@ let data = require('@begin/data')
 
 exports.handler = async function todos (req) {
   let body = req.queryStringParameters
-  
+
   if (body.secret != process.env.ACCESS_SECRET) {
     return {
       statusCode: 200,
@@ -28,7 +28,8 @@ exports.handler = async function todos (req) {
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     },
     body: JSON.stringify({
-      ...keyValue
+      key: keyValue.key,
+      value: keyValue.value || null
     })
   }
 }

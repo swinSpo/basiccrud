@@ -27,7 +27,8 @@ exports.handler = async function todos (req) {
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     },
     body: JSON.stringify({
-      ...keyValue
+      key: keyValue.key,
+      value: keyValue.value || null
     })
   }
 }
