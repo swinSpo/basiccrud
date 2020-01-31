@@ -5,7 +5,6 @@ snow-qxg
 
 @http
 get /todos
-post /todos
 get /key
 post /key
 delete /key
