@@ -9,6 +9,7 @@ post /todos
 post /todos/delete
 get /key
 post /key
+delete /key
 
 @tables
 data
