@@ -4,10 +4,10 @@ snow-qxg
 @static
 
 @http
-get /todos
 get /key
 post /key
 delete /key
+get /test
 
 @tables
 data
