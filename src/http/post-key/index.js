@@ -1,15 +1,20 @@
-// Enable secure sessions, express-style middleware, and more:
-// https://docs.begin.com/en/functions/http/
-//
-// let begin = require('@architect/functions')
+const data = require('@begin/data')
 
-exports.handler = async function http(req) {
-  console.log(req)
+exports.handler = async function todos (req) {
+  let body = arc.http.helpers.bodyParser(req)
+  let keyValue = await data.set({
+    table: 'keys',
+    key: body.key,
+    value: body.value
+  })
   return {
-    status: 302,
+    statusCode: 201,
     headers: {
+      'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     },
-    location: '/'
+    body: JSON.stringify({
+      keyValue
+    })
   }
 }
