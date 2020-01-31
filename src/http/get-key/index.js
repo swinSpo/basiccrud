@@ -21,10 +21,10 @@ exports.handler = async function todos (req) {
     key: body.key
   })
 
-  let data = {key: null, value: null}
+  let bodyData = {key: null, value: null}
 
   if (keyValue != null) {
-    data = {key: keyValue.key, value: keyValue.value}
+    bodyData = {key: keyValue.key, value: keyValue.value}
   }
 
   return {
@@ -33,6 +33,6 @@ exports.handler = async function todos (req) {
       'content-type': 'application/json; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(bodyData)
   }
 }
