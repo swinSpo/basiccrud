@@ -7,6 +7,7 @@ snow-qxg
 get /todos
 post /todos
 post /todos/delete
+get /key
 
 @tables
 data
