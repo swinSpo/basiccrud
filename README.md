@@ -1,2 +1,0 @@
-# basiccrud
-Begin app
