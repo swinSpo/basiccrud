@@ -8,6 +8,7 @@ get /todos
 post /todos
 post /todos/delete
 get /key
+post /key
 
 @tables
 data
